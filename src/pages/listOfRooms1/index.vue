@@ -140,8 +140,8 @@ const dict = reactive({
           align-items: center;
 
           .avatar {
-            width: 25px;
-            height: 25px;
+            width: 20px;
+            height: 20px;
             border-radius: 50%;
             background-color: rgb(238, 230, 230);
 
