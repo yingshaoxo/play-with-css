@@ -54,7 +54,7 @@ const dict = reactive({
   background-color: white;
 
   .grid-container {
-    padding: 25px;
+    padding: 15px;
     width: 100%;
 
     display: grid;
