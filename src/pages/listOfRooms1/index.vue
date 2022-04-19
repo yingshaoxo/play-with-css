@@ -48,15 +48,13 @@ const dict = reactive({
 
 <style lang="scss" scoped>
 .fatherBox1 {
-  margin: 0;
-
   display: flex;
-  height: 100vh;
+  // height: 110vh;
   width: 100vw;
   background-color: white;
 
   .grid-container {
-    padding: 15px;
+    padding: 25px;
     width: 100%;
 
     display: grid;
