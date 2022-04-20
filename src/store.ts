@@ -6,6 +6,7 @@ export const variables = reactive({
     routesMap: {
         home: "/",
         listOfRooms: "/listOfRooms",
+        chatRoom: "/chatRoom",
     }
 });
 

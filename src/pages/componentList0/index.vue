@@ -18,6 +18,8 @@ const dict = reactive({
     <div class="rooms">
       <button @click="() => { store.functions.pages.switchPage(store.variables.routesMap.listOfRooms) }">1. list of
         rooms</button>
+      <button @click="() => { store.functions.pages.switchPage(store.variables.routesMap.chatRoom) }">2. chat
+        room</button>
     </div>
   </div>
 </template>
@@ -38,8 +40,10 @@ const dict = reactive({
     justify-content: center;
     align-items: center;
 
+    margin-top: 30px;
+
     button {
-      margin: 20px;
+      margin-bottom: 15px;
     }
   }
 }
