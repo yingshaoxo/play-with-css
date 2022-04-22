@@ -7,6 +7,7 @@ export const variables = reactive({
         home: "/",
         listOfRooms: "/listOfRooms",
         chatRoom: "/chatRoom",
+        music: "/music",
     }
 });
 

@@ -20,6 +20,7 @@ const dict = reactive({
         rooms</button>
       <button @click="() => { store.functions.pages.switchPage(store.variables.routesMap.chatRoom) }">2. chat
         room</button>
+      <button @click="() => { store.functions.pages.switchPage(store.variables.routesMap.music) }">3. music</button>
     </div>
   </div>
 </template>

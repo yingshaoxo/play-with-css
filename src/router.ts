@@ -1,6 +1,7 @@
 import ComponentList0 from './pages/componentList0/index.vue';
 import ListOfRooms1 from './pages/listOfRooms1/index.vue';
 import ChatRoom2 from './pages/chatRoom2/index.vue';
+import Music3 from './pages/music3/index.vue';
 
 import store from './store';
 
@@ -21,6 +22,11 @@ const routes: Array<RouteRecordRaw> = [
         path: store.variables.routesMap.chatRoom,
         name: "chatRoom",
         component: ChatRoom2
+    },
+    {
+        path: store.variables.routesMap.music,
+        name: "music",
+        component: Music3
     },
 ]
 
