@@ -99,7 +99,8 @@ const audioProgressController = reactive({
     },
     updateProgressData: (newProgress: number, alsoUpdatePointer: boolean = false) => {
       audioProgressController.data.audioProgress = newProgress
-      audioProgressController.data.fakeAudioProgress = newProgress + 3
+
+      audioProgressController.data.fakeAudioProgress = newProgress + 1.7
 
       if (alsoUpdatePointer) {
         const pointerElement = audioProgressController.pointerReference
@@ -283,7 +284,7 @@ onMounted(() => {
         <div class="speedSelection">
           <select :ref="(ref) => dict.references.selection = ref" :onchange="onSelectionChange">
             <option value="1.0">1.0 speed</option>
-            <option value="1.2">1.2 speed</option>
+            <option value="1.2">1.2 skeed</option>
             <option value="1.5">1.5 speed</option>
             <option value="2.0">2.0 speed</option>
             <option value="3.0">3.0 speed</option>
@@ -306,7 +307,7 @@ onMounted(() => {
 .Column {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
 }
 
@@ -321,6 +322,11 @@ onMounted(() => {
 .papa {
   width: 100vw;
   height: 100vh;
+
+  @media (max-width: 768px) {
+    height: 100vh;
+  }
+
   // background: #ffff;
   background-color: rgb(222, 222, 242);
 
@@ -334,9 +340,19 @@ onMounted(() => {
     height: 80px;
 
     background-color: white;
-    // background-color: rgba(102, 241, 84, 0.5);
 
     .Row();
+
+    @media (max-width: 768px) {
+      .Column();
+      height: 20vh;
+
+      padding-top: 10px;
+      padding-bottom: 10px;
+
+      padding-left: 20px;
+      padding-right: 20px;
+    }
 
     .left {
       width: 70%;
@@ -345,12 +361,26 @@ onMounted(() => {
       padding-left: 20px;
       padding-right: 20px;
 
+      @media (max-width: 768px) {
+        width: 100%;
+
+        // margin-top: 10px;
+        // margin-bottom: 20px;
+
+        padding-left: 0px;
+        padding-right: 0px;
+      }
+
       .Row();
 
       // background-color: red;
 
       .playIcon {
         font-size: @progressBarHeight * 2;
+
+        @media (max-width: 768px) {
+          width: min-content;
+        }
       }
 
       .progressBar {
@@ -358,6 +388,13 @@ onMounted(() => {
 
         margin-left: 20px;
         margin-right: 16px;
+
+        @media (max-width: 768px) {
+          width: 90%;
+
+          margin-left: 20px;
+          margin-right: 12px;
+        }
 
         .Row();
         position: relative;
@@ -408,18 +445,26 @@ onMounted(() => {
 
         width: 200px;
 
-        text-align: center;
-
         font-family: -apple-system, SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, San Francisco, Arial, PingFang SC, Microsoft Yahei, STHeiti, Microsoft JhengHei, SimSun, sans-serif;
-        text-align: left;
-        padding: 0;
-        border: 0;
         font-size: 16px;
-        top: 0;
-        right: 0;
-        bottom: 0;
         color: #999;
         margin: auto;
+
+        @media (max-width: 768px) {
+          // font-family: 'Courier New', Courier, monospace;
+          height: 100%;
+          font-size: 10px;
+          // width: auto;
+          // min-width: 60px;
+          width: 90px;
+          right: auto;
+          bottom: auto;
+          top: auto;
+          padding: auto;
+
+          display: flex;
+          justify-content: flex-end;
+        }
       }
     }
 
@@ -427,16 +472,29 @@ onMounted(() => {
       width: 35%;
       height: 100%;
 
-      // background-color: blue;
-
       .Row();
       padding-left: 20px;
       padding-right: 20px;
+
+      @media (max-width: 768px) {
+        width: 100%;
+
+        // padding-left: 20px;
+        // padding-right: 10px;
+        padding-left: 0px;
+        padding-right: 0px;
+      }
+
 
       .speakerIcon {
         font-size: @progressBarHeight * 1.2;
         // color: #B1B7CB;
         color: #717587;
+
+        @media (max-width: 768px) {
+          margin-left: 5px;
+          font-size: @progressBarHeight * 2;
+        }
       }
 
       .volumeBar {
@@ -444,6 +502,13 @@ onMounted(() => {
 
         margin-left: 8px;
         margin-right: 16px;
+
+        @media (max-width: 768px) {
+          width: 90%;
+
+          margin-left: 18px;
+          margin-right: 20px;
+        }
 
         .Row();
         position: relative;
@@ -502,6 +567,13 @@ onMounted(() => {
     }
 
     .speedSelection {
+      @media (max-width: 768px) {
+        width: 60px;
+
+        display: flex;
+        justify-content: flex-end;
+      }
+
       select {
         border-width: 0.1px;
         border-color: #b1b7ca;
@@ -529,6 +601,11 @@ onMounted(() => {
         width: max-content;
         height: 22px;
         line-height: 22px;
+
+        @media (max-width: 768px) {
+          width: 90px;
+          font-size: 9px;
+        }
       }
     }
   }
@@ -536,11 +613,21 @@ onMounted(() => {
   .lyricsBox {
     height: calc(100% - 150px);
 
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 50px;
+    padding-bottom: 20px;
 
     text-align: center;
     overflow: scroll;
+
+    font-size: large;
+    color: rgba(0, 0, 0, 0.85);
+
+    @media (max-width: 768px) {
+      height: 70vh;
+
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
   }
 }
 </style>
