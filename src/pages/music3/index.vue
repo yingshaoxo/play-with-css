@@ -253,11 +253,12 @@ onMounted(() => {
           <pause-circle-filled v-if="audioProgressController.data.audioIsPlaying" />
         </div>
         <div class="progressBar">
-          <div :ref="ref => audioProgressController.backgroundBarReference = ref" class="progressBarBackground"></div>
-          <div :ref="(ref) => audioProgressController.pointerReference = ref" class="progressBarPoint" :style="{
+          <div :ref="(ref: any) => audioProgressController.backgroundBarReference = ref" class="progressBarBackground">
+          </div>
+          <div :ref="(ref: any) => audioProgressController.pointerReference = ref" class="progressBarPoint" :style="{
           }"></div>
-          <div :ref="(ref) => audioProgressController.backgroundBarProgressReference = ref" class="progressBarProgress"
-            :style="{
+          <div :ref="(ref: any) => audioProgressController.backgroundBarProgressReference = ref"
+            class="progressBarProgress" :style="{
               width: `${audioProgressController.data.fakeAudioProgress}%`
             }"></div>
         </div>
@@ -273,16 +274,17 @@ onMounted(() => {
           <SoundFilled></SoundFilled>
         </div>
         <div class="volumeBar">
-          <progress :ref="(ref) => audioVolumnController.refrences.audioVolumnBackground = ref"
+          <progress :ref="(ref: any) => audioVolumnController.refrences.audioVolumnBackground = ref"
             class="volumeBarBackground" :value="audioVolumnController.data.progress" max="100"></progress>
           <!-- <div :ref="(ref) => audioVolumnController.refrences.audioVolumnBackground = ref" class="volumeBarBackground">
           </div> -->
-          <div :ref="(ref) => audioVolumnController.refrences.audioVolumnPointer = ref" class="volumeBarPoint"></div>
+          <div :ref="(ref: any) => audioVolumnController.refrences.audioVolumnPointer = ref" class="volumeBarPoint">
+          </div>
           <!-- <div :ref="(ref) => audioVolumnController.refrences.audioVolumnProgress = ref" class="volumeBarProgress">
           </div> -->
         </div>
         <div class="speedSelection">
-          <select :ref="(ref) => dict.references.selection = ref" :onchange="onSelectionChange">
+          <select :ref="(ref: any) => dict.references.selection = ref" :onchange="onSelectionChange">
             <option value="1.0">1.0 speed</option>
             <option value="1.2">1.2 skeed</option>
             <option value="1.5">1.5 speed</option>
