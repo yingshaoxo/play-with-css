@@ -1,0 +1,33 @@
+{
+    "editor.detectIndentation": false,
+    "editor.tabSize": 2,
+    "editor.formatOnSave": true,
+    "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true,
+        "eslint.autoFixOnSave": true
+    },
+    "eslint.format.enable": true,
+    "eslint.validate": [
+        "javascript",
+        "vue"
+    ],
+    "diffEditor.ignoreTrimWhitespace": true,
+    "editor.formatOnType": true,
+    "files.autoSave": "onFocusChange",
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "[javascript]": {
+        "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "js/ts.implicitProjectConfig.checkJs": true,
+    "[vue]": {
+        "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    }
+}

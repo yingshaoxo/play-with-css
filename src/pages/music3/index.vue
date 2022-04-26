@@ -5,7 +5,7 @@ import { PlayCircleFilled, PauseCircleFilled, SoundFilled } from '@ant-design/ic
 
 import store from '../../store'
 
-import theSong from '../../assets/music/浪.mp3'
+import theSong from '../../assets/music3/浪.mp3'
 import LyricsComponent from './lyrics.vue'
 
 const audioProgressController = reactive({
@@ -264,7 +264,7 @@ onMounted(() => {
         </div>
         <div class="timeTextLabel">
           {{
-            audioTimeNumberToString(audioProgressController.audio.currentTime) + " / " +
+              audioTimeNumberToString(audioProgressController.audio.currentTime) + " / " +
               audioTimeNumberToString(audioProgressController.audio.duration)
           }}
         </div>

@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { reactive } from 'vue'
-import store from '../../store'
+import store from './store'
 
 const dict = reactive({
   data: {
@@ -16,11 +16,18 @@ const dict = reactive({
       Hi there!
     </div>
     <div class="rooms">
-      <button @click="() => { store.functions.pages.switchPage(store.variables.routesMap.listOfRooms) }">1. list of
-        rooms</button>
-      <button @click="() => { store.functions.pages.switchPage(store.variables.routesMap.chatRoom) }">2. chat
-        room</button>
-      <button @click="() => { store.functions.pages.switchPage(store.variables.routesMap.music) }">3. music</button>
+      <button
+        v-for="(room, index) in Object.values(store.variables.routesMap).slice(1)"
+        :key="index"
+        @click="
+          () =>
+          { store.functions.pages.switchPage(room) }">
+        {{
+          index + 1
+        }}. {{
+          room?.split('/')[1]
+        }}
+      </button>
     </div>
   </div>
 </template>
@@ -36,12 +43,17 @@ const dict = reactive({
   width: 100vw;
 
   .rooms {
+    min-width: 60%;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
+    border: 1px solid red;
     margin-top: 30px;
+
+    padding-top: 20px;
 
     button {
       margin-bottom: 15px;
