@@ -35,7 +35,7 @@ const dict = reactive({
 })
 </script>
 
-<template>
+<template class="big">
   <div
     class="calendar_container"
     @click="dict.data.selectedDay = null">
@@ -85,6 +85,7 @@ const dict = reactive({
           </div>
         </div>
       </div>
+
       <div
         v-for="(dayNumber, index) in dict.data.currentDate.daysInMonth()"
         :key="index"
@@ -98,7 +99,9 @@ const dict = reactive({
         @focusin="()=> {
           dict.data.selectedDay = null
         }">
-        {{ dayNumber }}
+        <div class="what">
+          {{ dayNumber }}
+        </div>
       </div>
     </div>
   </div>
@@ -137,18 +140,36 @@ const dict = reactive({
   background-color: #feac31;
   color: white;
   border-color: transparent;
+
+  @media (min-width: 948px) {
+    max-width: 20%;
+    height: 35%;
+    border-radius: 0;
+    margin-left: 39.5%;
+    // background-color: transparent;
+    // color: #4f5964;
+    & > div {
+      width: 50%;
+    }
+  }
 }
 
 .calendar_container {
   height: @calendar_height;
   width: @calendar_width;
-  background-color: lightgreen;
+
+  // background-color: lightgreen;
+  background-color: white;
 
   overflow: hidden;
 
   .Rows();
   justify-content: flex-start;
   padding-top: 22vh;
+
+  @media (min-width: 948px) {
+    padding-top: 0px;
+  }
 
   .title {
     margin-bottom: 40px;
@@ -192,6 +213,20 @@ const dict = reactive({
     }
   }
 
+  @media (min-width: 948px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    .days_grid {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
   .days_grid {
     display: grid;
     grid-template-columns: auto auto auto auto auto auto auto;
@@ -202,7 +237,7 @@ const dict = reactive({
     > div {
       min-width: @day_cell_length;
       min-height: @day_cell_length;
-      
+
       .Rows();
     }
 
@@ -238,25 +273,55 @@ const dict = reactive({
     }
 
     .day_cell {
-      @media (max-width: 768px) {
-      }
-        &:hover {
-          color-scheme: light;
-          user-select: none;
-          color: #4f5964;
-          box-sizing: border-box;
-          border-width: 1px;
-          border-style: solid;
-          border-radius: 50%;
-          transition: background-color .2s,color .2s;
-          cursor: pointer;
-          // border-color: #feac31;
-          // background-color: transparent;
-          background-color: #5FA2DD;
-          // background-color: #feac31;
-          color: white;
-          border-color: transparent;
+      @media (min-width: 948px) {
+        @length: 50px;
+        text-align: center;
+
+        width: 100%;
+        height: 100%;
+        min-height: @length;
+        min-width: @length;
+
+        .Rows();
+
+        .what {
+          .Rows();
+
+          width: @length;
+          height: @length;
+          min-height: @length;
+          min-width: @length;
+
+          &:hover {
+            background-color: #5FA2DD;
+            // background-color: #feac31;
+            color: white;
+          }
         }
+      }
+
+      &:hover {
+        color-scheme: light;
+        user-select: none;
+        color: #4f5964;
+        box-sizing: border-box;
+        border-width: 1px;
+        border-style: solid;
+        border-radius: 50%;
+        transition: background-color .2s,color .2s;
+        cursor: pointer;
+        // border-color: #feac31;
+        // background-color: transparent;
+        background-color: #5FA2DD;
+        // background-color: #feac31;
+        color: white;
+        border-color: transparent;
+
+        @media (min-width: 948px) {
+          background-color: transparent;
+          color: #4f5964;
+        }
+      }
     }
   }
 }
