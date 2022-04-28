@@ -282,7 +282,7 @@ onMounted(async () => {
 </template>
 
 <style lang="less" scoped>
-@joystick-length: 100px;
+@joystick-length: 120px;
 
 .Rows {
   display: flex;
