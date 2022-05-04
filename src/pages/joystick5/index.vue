@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { reactive, withDefaults, computed, onMounted, watch } from 'vue'
+import { reactive, withDefaults, computed, onMounted, watch, ref } from 'vue'
 
 import store from '../../store'
 
@@ -41,7 +41,7 @@ const dict = reactive({
     angle: null as null | number,
   },
   functions: {
-    setVisible: (htmlElement: HTMLElement, isVisible : boolean) => {
+    setVisible: (htmlElement: HTMLElement, isVisible: boolean) => {
       if (isVisible) {
         htmlElement.style.visibility = 'visible'
       } else {
@@ -106,7 +106,7 @@ const dict = reactive({
         }
       }
     },
-    doesThePointInsideOfBigCircle: (point: Point) :boolean => {
+    doesThePointInsideOfBigCircle: (point: Point): boolean => {
       const bigCircleCenterPoint = dict.functions.getTheCenterPointOfBigCircle()
       if (bigCircleCenterPoint) {
         const bigCircleElement = dict.references.bigCircleElement
@@ -261,7 +261,40 @@ onMounted(async () => {
     //   onEnd()
     // }
   }
+
+  window.history.pushState(null, document.title, window.location.href)
+  window.addEventListener('popstate', (event) => {
+    window.history.pushState(null, document.title, window.location.href)
+  })
 })
+
+const inFullScreen = ref(false)
+const fullscreenToggleFunction = () => {
+  if (inFullScreen.value) {
+    const document_ = document as any
+    if (document_.exitFullscreen) {
+      document_.exitFullscreen()
+    } else if (document_?.webkitExitFullscreen) { /* Safari */
+      document_?.webkitExitFullscreen()
+    } else if (document_?.msExitFullscreen) { /* IE11 */
+      document_?.msExitFullscreen()
+    }
+    inFullScreen.value = false
+  } else {
+    const element = document.documentElement as any
+    // const element = dict.references.backgroundElement as any
+    if (element.requestFullscreen) {
+      element.requestFullscreen()
+    } else if (element?.mozRequestFullScreen) {
+      element?.mozRequestFullScreen()
+    } else if (element?.webkitRequestFullscreen) {
+      element?.webkitRequestFullscreen()
+    } else if (element?.msRequestFullscreen) {
+      element?.msRequestFullscreen()
+    }
+    inFullScreen.value = true
+  }
+}
 </script>
 
 <template>
@@ -270,14 +303,17 @@ onMounted(async () => {
     <div v-if="!isInMobile()">
       Mobile Only
     </div>
-    <div v-if="isInMobile()" :ref="(ref:any)=>dict.references.backgroundElement=ref" class="joystick-active-area">
-      <!-- <div>yingshaoxo</div> -->
-      <div :ref="(ref:any)=>dict.references.bigCircleElement=ref" class="bigCircle">
-        <div
-          :ref="(ref:any)=>dict.references.smallCircleElement=ref"
-          class="smallCircle" />
-      </div>  
-    </div>
+    <template v-if="isInMobile()">
+      <button class="goFullscreenButton" @click="fullscreenToggleFunction">
+        {{ inFullScreen ? 'Exit Fullscreen' : 'Go To Fullscreen' }}
+      </button>
+      <div :ref="(ref: any) => dict.references.backgroundElement = ref" class="joystick-active-area">
+        <!-- <div>yingshaoxo</div> -->
+        <div :ref="(ref: any) => dict.references.bigCircleElement = ref" class="bigCircle">
+          <div :ref="(ref: any) => dict.references.smallCircleElement = ref" class="smallCircle" />
+        </div>
+      </div>
+    </template>
   </div>
 </template>
 
@@ -308,7 +344,7 @@ onMounted(async () => {
 }
 
 .NotDraggable {
-  user-drag: none; 
+  user-drag: none;
   user-select: none;
   -moz-user-select: none;
   -webkit-user-drag: none;
@@ -316,9 +352,19 @@ onMounted(async () => {
   -ms-user-select: none;
 }
 
+.goFullscreenButton {
+  background-color: #fff;
+  border: 1px solid #000;
+  padding: 10px;
+  cursor: pointer;
+  margin-bottom: 12px;
+}
+
 .JoyStickPage {
   width: 100vw;
   height: 100vh;
+
+  overflow: hidden !important;
 
   .Rows();
 
@@ -364,9 +410,9 @@ onMounted(async () => {
   opacity: 0.8;
 
   @shadowColor: rgba(220, 144, 144, 0.5);
-  -moz-box-shadow:    inset 0 0 10px @shadowColor;
+  -moz-box-shadow: inset 0 0 10px @shadowColor;
   -webkit-box-shadow: inset 0 0 10px @shadowColor;
-  box-shadow:         inset 0 0 10px @shadowColor;
+  box-shadow: inset 0 0 10px @shadowColor;
 
   .Unselectable();
 }
