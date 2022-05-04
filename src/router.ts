@@ -4,6 +4,7 @@ import ChatRoom2 from './pages/chatRoom2/index.vue'
 import Music3 from './pages/music3/index.vue'
 import Calendar4 from './pages/calendar4/index.vue'
 import Joystick5 from './pages/joystick5/index.vue'
+import ThreeJS6 from './pages/threeJS6/index.vue'
 
 import store from './store'
 
@@ -39,6 +40,11 @@ const routes: Array<RouteRecordRaw> = [
     path: store.variables.routesMap.joystick,
     name: 'joystick',
     component: Joystick5,
+  },
+  {
+    path: store.variables.routesMap.threejs,
+    name: 'threejs',
+    component: ThreeJS6,
   },
 ]
 

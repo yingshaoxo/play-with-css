@@ -10,6 +10,7 @@ export const variables = reactive({
     music: '/music',
     calendar: '/calendar',
     joystick: '/joystick',
+    threejs: '/threejs',
   },
 })
 

@@ -8,6 +8,8 @@
     "jsx": "preserve",
     "sourceMap": true,
     "resolveJsonModule": true,
+    "declaration": true,
+    "declarationMap": true,
     "isolatedModules": false,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
