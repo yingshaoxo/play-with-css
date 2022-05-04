@@ -262,10 +262,10 @@ onMounted(async () => {
     // }
   }
 
-  window.history.pushState(null, document.title, window.location.href)
-  window.addEventListener('popstate', (event) => {
-    window.history.pushState(null, document.title, window.location.href)
-  })
+  // window.history.pushState(null, document.title, window.location.href)
+  // window.addEventListener('popstate', (event) => {
+  //   window.history.pushState(null, document.title, window.location.href)
+  // })
 })
 
 const inFullScreen = ref(false)
