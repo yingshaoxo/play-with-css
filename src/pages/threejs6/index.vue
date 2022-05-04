@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { reactive, withDefaults, computed, onMounted, watch, onBeforeUnmount, nextTick, defineEmits } from 'vue'
+import { reactive, withDefaults, computed, onMounted, watch, onBeforeUnmount, nextTick, defineEmits, ref } from 'vue'
 import store from '../../store'
 
 import JoystickController from './components/joystickController.vue'
@@ -165,10 +165,26 @@ onMounted(async () => {
 
   animate()
 })
+
+const fullscreenToggleFunction = () => {
+  const element = document.documentElement as any
+  // const element = dict.references.backgroundElement as any
+  if (element.requestFullscreen) {
+    element.requestFullscreen()
+  } else if (element?.mozRequestFullScreen) {
+    element?.mozRequestFullScreen()
+  } else if (element?.webkitRequestFullscreen) {
+    element?.webkitRequestFullscreen()
+  } else if (element?.msRequestFullscreen) {
+    element?.msRequestFullscreen()
+  }
+}
 </script>
 
 <template>
-  <div class="ThreeJsPage">
+  <div
+    class="ThreeJsPage"
+    @click="fullscreenToggleFunction">
     <div :ref="(ref: any) => dict.references.threejsElement = ref" class="threejsElement">
       <JoystickController
         :ref="(ref: any) => dict.references.joystickElement = ref"
