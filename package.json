@@ -68,6 +68,7 @@
     "vite-plugin-svg-icons": "^1.0.5",
     "vue": "^3.2.20",
     "vue-eslint-parser": "^7.11.0",
-    "vue-tsc": "^0.29.8"
+    "vue-tsc": "^0.29.8",
+    "rollup-plugin-node-builtins": "^2.1.2"
   }
 }
