@@ -106,14 +106,13 @@ onMounted(async () => {
 
   animate()
 
-  onBeforeUnmount(() => {
-    debugger
-    letItStop = true
-    nextTick(() => {
-      threejsElement.removeChild(renderer.domElement)
-      renderer.dispose()
-    })
-  })
+  // onBeforeUnmount(() => {
+  //   letItStop = true
+  //   nextTick(() => {
+  //     threejsElement.removeChild(renderer.domElement)
+  //     renderer.dispose()
+  //   })
+  // })
 })
 </script>
 
