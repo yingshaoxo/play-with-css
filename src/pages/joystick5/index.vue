@@ -167,9 +167,9 @@ const dict = reactive({
 })
 
 onMounted(async () => {
-  window.onresize = () => {
-    window?.location?.reload()
-  }
+  // window.onresize = () => {
+  //   window?.location?.reload()
+  // }
 
   const backgroundElement = dict.references.backgroundElement
 
