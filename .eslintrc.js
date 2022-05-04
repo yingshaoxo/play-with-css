@@ -116,5 +116,6 @@ module.exports = {
     'vue/no-lone-template': 'off',
     'no-lonely-if': 'off',
     'no-else-return': 'off',
+    'no-used-vars': 'off',
   },  
 }

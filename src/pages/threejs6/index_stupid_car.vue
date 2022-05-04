@@ -7,58 +7,11 @@ import JoystickController from './components/joystickController.vue'
 import * as THREE from 'three'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 import type { GLTF } from 'three/examples/jsm/loaders/GLTFLoader.js'
-import { AxesHelper, Group, Mesh, Object3D, Scene } from 'three'
+import { AxesHelper, Group } from 'three'
 
-import dragonBallTexture from '../../assets/threejs6/ballFire.jpg'
+import theRoadTexture from '../../assets/threejs6/road_texture2.jpg'
 
 const degreeToRadians = (degree: number, offset = 1) => degree * (Math.PI * offset) / 180
-
-const convertDegreeToXY = (degree: number) => {
-  const x = Math.cos(degreeToRadians(degree))
-  const y = Math.sin(degreeToRadians(degree))
-
-  return { x, y }
-}
-
-const getRandomColor = () => {
-  const letters = '0123456789ABCDEF'
-  let color = '#'
-  for (let i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * 16)]
-  }
-  return color
-}
-
-const createAPoint = (x: number, y: number, z: number) => {
-  const geometry = new THREE.SphereGeometry(0.1, 32, 32)
-  const material = new THREE.MeshBasicMaterial({
-    color: 0xffffff,
-    wireframe: true,
-  })
-  const mesh = new THREE.Mesh(geometry, material)
-  mesh.position.set(x, y, z)
-  return mesh
-}
-
-const createCube = (x: number, y: number, z: number) => {
-  const geometry = new THREE.BoxGeometry(1, 1, 1)
-  const material = new THREE.MeshBasicMaterial({
-    color: 0xffffff,
-    wireframe: true,
-  })
-  const mesh = new THREE.Mesh(geometry, material)
-  mesh.position.set(x, y, z)
-  return mesh
-}
-
-const spaw_colorful_box_randomly = (scene: Scene) => {
-  const x = Math.random() * 10 - 5
-  const y = Math.random() * 10 - 5
-  const z = Math.random() * 10 - 5
-
-  const box = createCube(x, 0, z)
-  scene.add(box)
-}
 
 const dict = reactive({
   references: {
@@ -66,26 +19,20 @@ const dict = reactive({
     joystickElement: null as null | HTMLElement,
   },
   data: {
-    ball: null as Mesh | null,
+    car: null as Group | null,
   },
   functions: {
     onDegreeChange: (degree: number) => {
-      const ball = dict.data.ball
+      const car = dict.data.car
 
-      if (!ball) {
+      if (!car) {
         return
       }
 
       // console.log(degree)
 
-      const value = degreeToRadians(degree)
-      ball.rotation.x = value
-      ball.rotation.y = value
-      // ball.rotation.z = value
-
-      const xy = convertDegreeToXY(degree)
-      ball.position.x += xy.x * 0.05
-      ball.position.z += xy.y * 0.05
+      const value = degreeToRadians(degree + 270, -0.8)
+      car.rotation.y = value
 
       // console.log(value)
     },
@@ -108,54 +55,106 @@ onMounted(async () => {
 
   // add a camera
   const camera = new THREE.PerspectiveCamera(75, elementWidth / elementHeight, 0.1, 1000)
-  camera.position.set(0, 10, 0)
-  camera.up.set(0, 0, -1)
-  camera.lookAt(0, 0, 0)
+  camera.position.z = 8 // 400
+  camera.position.y = 4 // 400
 
   // add renderer
   const renderer = new THREE.WebGLRenderer({ antialias: true })
   renderer.setSize(elementWidth, elementHeight)
   threejsElement.appendChild(renderer.domElement)
 
+  // add other objects
+  // const geometry = new THREE.BoxGeometry(1, 1, 1)
+  // const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 })
+  // const cube = new THREE.Mesh(geometry, material)
+  // scene.add(cube)
+
   // add lights
   const hlight = new THREE.AmbientLight(0x404040, 100)
   scene.add(hlight)
 
-  // add a ball
-  const geometry = new THREE.SphereGeometry(0.3, 32, 32) // (radius, widthSegments, heightSegments)
-  const material = new THREE.MeshBasicMaterial({ color: 0xffff00 })
+  // const directionalLight = new THREE.DirectionalLight(0xffffff, 10)
+  // directionalLight.position.set(0, 1, 0)
+  // directionalLight.castShadow = true
+  // scene.add(directionalLight)
 
-  const ballTexture = new THREE.TextureLoader().load(dragonBallTexture)
-  ballTexture.wrapS = THREE.RepeatWrapping
-  ballTexture.wrapT = THREE.RepeatWrapping
-  ballTexture.repeat.set(1, 1)
-  const ballMaterial = new THREE.MeshBasicMaterial({ map: ballTexture })
+  // const light = new THREE.PointLight(0xc4c4c4, 10)
+  // light.position.set(0, 300, 500)
+  // scene.add(light)
 
-  const ball = new THREE.Mesh(geometry, ballMaterial)
-  scene.add(ball)
-  dict.data.ball = ball
+  // const light2 = new THREE.PointLight(0xc4c4c4, 10)
+  // light2.position.set(500, 100, 0)
+  // scene.add(light2)
 
-  for (let i = 0; i < 5; i++) {
-    spaw_colorful_box_randomly(scene)
-  }
+  // const light3 = new THREE.PointLight(0xc4c4c4, 10)
+  // light3.position.set(0, 100, -500)
+  // scene.add(light3)
+
+  // const light4 = new THREE.PointLight(0xc4c4c4, 10)
+  // light4.position.set(-500, 300, 500)
+  // scene.add(light4)
+
+  // add a plane
+  const planeGeometry = new THREE.PlaneGeometry(10, 1000, 1, 1)
+  // const planeMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff, side: THREE.DoubleSide })
+
+  const roadTexture = new THREE.TextureLoader().load(theRoadTexture)
+  roadTexture.wrapS = THREE.RepeatWrapping
+  roadTexture.wrapT = THREE.RepeatWrapping
+  roadTexture.repeat.set(1, 1)
+  const planeMaterial = new THREE.MeshBasicMaterial({ map: roadTexture })
+
+  const plane = new THREE.Mesh(planeGeometry, planeMaterial)
+  plane.rotation.x = degreeToRadians(-90)
+  plane.position.y = -1
+  scene.add(plane)
+
+  // add a car
+  const loader = new GLTFLoader()
+  const base_url = window.location.href.split('#')[0]
+  loader.load(`${base_url}car_model.glb`, (gltf: GLTF) => {
+    gltf.scene.scale.set(5, 5, 5)
+    gltf.scene.position.x = 0 // Position (x = right+ left-) 
+    gltf.scene.position.y = -1 // Position (y = up+, down-)
+    gltf.scene.position.z = 0.5
+
+    const mesh = gltf.scene
+    gltf.scene.traverse((child) => { })
+
+    let box = new THREE.Box3().setFromObject(mesh)
+    box.getCenter(mesh.position) 
+    mesh.position.multiplyScalar(-1)
+
+    let pivot = new THREE.Group()
+    scene.add(pivot)
+    pivot.add(mesh)
+
+    // let axesHelper = new THREE.AxesHelper(100)
+    // scene.add(axesHelper)
+
+    dict.data.car = pivot
+  }, undefined, (error: any) => {
+    console.log(error)
+  })
 
   // loop
+  let letItStop = false
   let animate = () => {
+    if (letItStop) {
+      return
+    }
+
     requestAnimationFrame(animate)
 
-    if (dict.data.ball) {
+    if (dict.data.car) {
       const joystickComponent = dict.references.joystickElement
       if (joystickComponent) {
         const distance = joystickComponent?.dict?.data?.distance
         if (distance != 0) {
-          // set tracing line
-          const ballPosition = dict.data.ball.position
-          const newBall = createAPoint(ballPosition.x, ballPosition.y, ballPosition.z)
-          scene.add(newBall)
+          // let the car go farward
+          dict.data.car.translateZ(distance / 10000)
 
-          setTimeout(() => {
-            scene.remove(newBall)
-          }, 1000)
+          console.log(distance)
         }
       }
     }
