@@ -248,7 +248,7 @@ onMounted(async () => {
   }
 })
 
-watch(() => dict.data.angle, (newValue: number, _oldValue: number) => {
+watch(() => dict.data.angle, (newValue: any, _oldValue: any) => {
   emit('onDegressChange', newValue)
 })
 

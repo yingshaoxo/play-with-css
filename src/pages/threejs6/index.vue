@@ -146,7 +146,8 @@ onMounted(async () => {
     if (dict.data.ball) {
       const joystickComponent = dict.references.joystickElement
       if (joystickComponent) {
-        const distance = joystickComponent?.dict?.data?.distance
+        const theJoystickComponent = joystickComponent as any
+        const distance = theJoystickComponent?.dict?.data?.distance
         if (distance != 0) {
           // set tracing line
           const ballPosition = dict.data.ball.position

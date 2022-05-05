@@ -5,6 +5,7 @@ import Music3 from './pages/music3/index.vue'
 import Calendar4 from './pages/calendar4/index.vue'
 import Joystick5 from './pages/joystick5/index.vue'
 import ThreeJS6 from './pages/threejs6/index.vue'
+import InfoPage7 from './pages/infoPage7/index.vue'
 
 import store from './store'
 
@@ -45,6 +46,11 @@ const routes: Array<RouteRecordRaw> = [
     path: store.variables.routesMap.threejs,
     name: 'threejs',
     component: ThreeJS6,
+  },
+  {
+    path: store.variables.routesMap.infoPage,
+    name: 'infoPage',
+    component: InfoPage7,
   },
 ]
 
