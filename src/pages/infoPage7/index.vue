@@ -21,7 +21,10 @@ onMounted(async () => {
 
 <template>
   <div class="InfoPage">
-    <!-- <div class="yingshao_xo">Made by yingshaoxo</div> -->
+    <div>info</div>
+  </div>
+  <!-- <div class="InfoPage">
+    <div class="yingshao_xo">Made by yingshaoxo</div>
     <div class="topBar">
       <div class="leftArrow">
         <arrow-left-outlined />
@@ -51,7 +54,7 @@ onMounted(async () => {
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 </template>
 
 <style lang="less" scoped>

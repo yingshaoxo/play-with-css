@@ -245,8 +245,8 @@ const fullscreenToggleFunction = () => {
 .joystickController {
   position: absolute;
 
-  background-color: rgb(255, 228, 196);
-  opacity: 0.5;
+  background-color: transparent;
+  opacity: 0.8;
 }
 
 .threejsElement {
