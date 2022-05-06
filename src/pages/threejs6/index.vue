@@ -10,6 +10,7 @@ import type { GLTF } from 'three/examples/jsm/loaders/GLTFLoader.js'
 import { AxesHelper, Group, Mesh, Object3D, Scene } from 'three'
 
 import dragonBallTexture from '../../assets/threejs6/ballFire.jpg'
+import { debug } from 'console'
 
 const degreeToRadians = (degree: number, offset = 1) => degree * (Math.PI * offset) / 180
 
@@ -66,6 +67,7 @@ const dict = reactive({
     joystickElement: null as null | HTMLElement,
   },
   data: {
+    show: true,
     ball: null as Mesh | null,
   },
   functions: {
@@ -165,6 +167,17 @@ onMounted(async () => {
   }
 
   animate()
+
+  window.onresize = () => {
+    const threejsElement = dict.references.threejsElement
+    if (threejsElement) {
+      const elementHeight = threejsElement.offsetHeight
+      const elementWidth = threejsElement.offsetWidth
+      renderer.setSize(elementWidth, elementHeight)
+      camera.aspect = elementWidth / elementHeight
+      camera.updateProjectionMatrix()
+    }
+  }
 })
 
 const fullscreenToggleFunction = () => {
@@ -231,6 +244,8 @@ const fullscreenToggleFunction = () => {
 }
 
 .ThreeJsPage {
+  position: absolute;
+
   width: 100vw;
   height: 100vh;
 
