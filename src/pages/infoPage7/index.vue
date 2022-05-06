@@ -20,7 +20,7 @@ const dict = reactive({
   references: {
   },
   data: {
-    activeTab: tabMap.saying,
+    activeTab: tabMap.home,
   },
   functions: {
   },
