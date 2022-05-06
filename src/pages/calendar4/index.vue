@@ -46,42 +46,29 @@ const dict = reactive({
 </script>
 
 <template class="big">
-  <div
-    class="calendar_container"
-    @click="dict.data.selectedDay = null">
+  <div class="calendar_container" @click="dict.data.selectedDay = null">
     <!-- <div class="title">
       Calendar
     </div> -->
 
     <div class="controller_header">
-      <div
-        class="previous_year"
-        @click="dict.functions.goToThePreviousYear">
+      <div class="previous_year" @click="dict.functions.goToThePreviousYear">
         {{ '<<' }}
       </div>
-      <div
-        class="previous_month"
-        @click="dict.functions.goToPreviousMonth">
+      <div class="previous_month" @click="dict.functions.goToPreviousMonth">
         {{ '<' }}
       </div>
       <div class="selected_year_and_month_title">{{ dict.data.currentDate.format('MMMM YYYY') }}</div>
-      <div
-        class="next_month"
-        @click="dict.functions.goToNextMonth">
+      <div class="next_month" @click="dict.functions.goToNextMonth">
         {{ '>' }}
       </div>
-      <div
-        class="next_year"
-        @click="dict.functions.goToTheNextYear">
+      <div class="next_year" @click="dict.functions.goToTheNextYear">
         {{ '>>' }}
       </div>
     </div>
 
-    <div
-      class="days_grid">
-      <div
-        v-for="(title, index) in dict.data.everyday_title_in_a_week"
-        :key="index">
+    <div class="days_grid">
+      <div v-for="(title, index) in dict.data.everyday_title_in_a_week" :key="index">
         <div class="tooltip">
           <div class="tooltip_text">
             {{
@@ -98,8 +85,8 @@ const dict = reactive({
 
       <div
         v-for="(dayNumber, index) in (dict.functions.getMyDayOfWeek(dict.data.currentDate.date(1).day()) - 1) "
-        :key="index"
-        class="fake_day_cell" />
+        :key="index" 
+        class="fake_cell_div" />
 
       <div
         v-for="(dayNumber, index) in dict.data.currentDate.daysInMonth()"
@@ -108,10 +95,10 @@ const dict = reactive({
           'day_on_select': dict.data.selectedDay?.unix() === dict.functions.getCurrentDayByDayNumber(dayNumber).unix(),
         }"
         class="day_cell"
-        @click.stop="()=> {
+        @click.stop="() => {
           dict.data.selectedDay = dict.functions.getCurrentDayByDayNumber(dayNumber)
         }"
-        @focusin="()=> {
+        @focusin="() => {
           dict.data.selectedDay = null
         }">
         <div class="what">
@@ -151,20 +138,22 @@ const dict = reactive({
   border-radius: 50%;
   // transition: background-color .2s,color .2s;
   cursor: pointer;
-  // background-color: #5FA2DD;
   background-color: #feac31;
   color: white;
   border-color: transparent;
 
   @media (min-width: 948px) {
-    max-width: 20%;
-    height: 35%;
+    @theWidth: 50px;
     border-radius: 0;
-    margin-left: 39.5%;
-    // background-color: transparent;
-    // color: #4f5964;
-    & > div {
-      width: 50%;
+    max-width: @theWidth !important;
+    max-height: @theWidth !important;
+    min-width: @theWidth !important;
+    min-height: @theWidth !important;
+    width: @theWidth !important;
+    height: @theWidth !important;
+    margin-left: 36.666%;
+    &>div {
+      // width: 20%;
     }
   }
 }
@@ -195,12 +184,15 @@ const dict = reactive({
 
     justify-content: space-between;
 
-    // width: calc(@calendar_width * 0.6);
     width: 60%;
 
     margin-bottom: 20px;
 
-    > div {
+    @media (min-width: 948px) {
+      margin-bottom: 100px;
+    }
+
+    >div {
       text-align: center;
 
       width: 20px;
@@ -215,6 +207,7 @@ const dict = reactive({
       &:hover {
         cursor: pointer;
       }
+
       &:nth-child(3) {
         cursor: default;
         user-select: auto;
@@ -249,11 +242,18 @@ const dict = reactive({
     column-gap: 8px;
     row-gap: 8px;
 
-    > div {
+    >div {
       min-width: @day_cell_length;
       min-height: @day_cell_length;
 
       .Rows();
+    }
+
+    @media (min-width: 948px) {
+      > div {
+        min-height: 70px;
+        min-width: calc(100vw/9);
+      }
     }
 
     .head_title {
@@ -292,24 +292,17 @@ const dict = reactive({
         @length: 50px;
         text-align: center;
 
-        width: 100%;
-        height: 100%;
-        min-height: @length;
-        min-width: @length;
-
         .Rows();
 
         .what {
           .Rows();
 
-          width: @length;
-          height: @length;
-          min-height: @length;
-          min-width: @length;
+          min-height: 50px;
+          min-width: 50px;
+          // max-height: 50px;
 
           &:hover {
             background-color: #5FA2DD;
-            // background-color: #feac31;
             color: white;
           }
         }
@@ -323,12 +316,9 @@ const dict = reactive({
         border-width: 1px;
         border-style: solid;
         border-radius: 50%;
-        transition: background-color .2s,color .2s;
+        transition: background-color .2s, color .2s;
         cursor: pointer;
-        // border-color: #feac31;
-        // background-color: transparent;
         background-color: #5FA2DD;
-        // background-color: #feac31;
         color: white;
         border-color: transparent;
 
