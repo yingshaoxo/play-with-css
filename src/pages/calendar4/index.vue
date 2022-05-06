@@ -31,8 +31,18 @@ const dict = reactive({
       dict.data.currentDate = dict.data.currentDate.add(1, 'month')
     },
     getCurrentDayByDayNumber: (dayNumber: number) => dict.data.currentDate.date(dayNumber),
+    getMyDayOfWeek: (num: number) => {
+      if (num == 0) {
+        num = 7
+        return num
+      } else {
+        return num
+      }
+    },
   },
 })
+
+// dayjs("2021-9-1").date(1).day()
 </script>
 
 <template class="big">
@@ -85,6 +95,11 @@ const dict = reactive({
           </div>
         </div>
       </div>
+
+      <div
+        v-for="(dayNumber, index) in (dict.functions.getMyDayOfWeek(dict.data.currentDate.date(1).day()) - 1) "
+        :key="index"
+        class="fake_day_cell" />
 
       <div
         v-for="(dayNumber, index) in dict.data.currentDate.daysInMonth()"
