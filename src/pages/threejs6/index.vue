@@ -94,10 +94,26 @@ const dict = reactive({
   },
 })
 
+const fullscreenToggleFunction = () => {
+  const element = document.documentElement as any
+  // const element = dict.references.backgroundElement as any
+  if (element.requestFullscreen) {
+    element.requestFullscreen()
+  } else if (element?.mozRequestFullScreen) {
+    element?.mozRequestFullScreen()
+  } else if (element?.webkitRequestFullscreen) {
+    element?.webkitRequestFullscreen()
+  } else if (element?.msRequestFullscreen) {
+    element?.msRequestFullscreen()
+  }
+}
+
 onMounted(async () => {
   if (!dict.references.threejsElement) {
     return
   }
+
+  fullscreenToggleFunction()
 
   const threejsElement = dict.references.threejsElement
   const elementHeight = threejsElement.offsetHeight
@@ -180,19 +196,6 @@ onMounted(async () => {
   }
 })
 
-const fullscreenToggleFunction = () => {
-  const element = document.documentElement as any
-  // const element = dict.references.backgroundElement as any
-  if (element.requestFullscreen) {
-    element.requestFullscreen()
-  } else if (element?.mozRequestFullScreen) {
-    element?.mozRequestFullScreen()
-  } else if (element?.webkitRequestFullscreen) {
-    element?.webkitRequestFullscreen()
-  } else if (element?.msRequestFullscreen) {
-    element?.msRequestFullscreen()
-  }
-}
 </script>
 
 <template>
