@@ -315,7 +315,7 @@ onMounted(async () => {
 
           height: 100px;
           width: 100px;
-          background-color: transparent;
+          background-color: rgba(255, 255, 255, 0.8);
 
           border-radius: 50%;
         }
