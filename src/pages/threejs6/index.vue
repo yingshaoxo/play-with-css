@@ -12,6 +12,14 @@ import { AxesHelper, Group, Mesh, Object3D, Scene } from 'three'
 import dragonBallTexture from '../../assets/threejs6/ballFire.jpg'
 import { debug } from 'console'
 
+const isInMobile = () => {
+  const ua = navigator.userAgent
+  if (/Mobile|Android|iP(hone|od)|IEMobile|BlackBerry|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(ua)) {
+    return true
+  }
+  return false
+}
+
 const degreeToRadians = (degree: number, offset = 1) => degree * (Math.PI * offset) / 180
 
 const convertDegreeToXY = (degree: number) => {
@@ -94,7 +102,10 @@ const dict = reactive({
   },
 })
 
+const fullScreend = ref(false)
 const fullscreenToggleFunction = () => {
+  fullScreend.value = true
+
   const element = document.documentElement as any
   // const element = dict.references.backgroundElement as any
   if (element.requestFullscreen) {
@@ -109,11 +120,15 @@ const fullscreenToggleFunction = () => {
 }
 
 onMounted(async () => {
+  if (!isInMobile()) {
+    return
+  }
+
   if (!dict.references.threejsElement) {
     return
   }
 
-  fullscreenToggleFunction()
+  // fullscreenToggleFunction()
 
   const threejsElement = dict.references.threejsElement
   const elementHeight = threejsElement.offsetHeight
@@ -195,20 +210,33 @@ onMounted(async () => {
     }
   }
 })
-
 </script>
 
 <template>
   <div
-    class="ThreeJsPage"
-    @click="fullscreenToggleFunction">
-    <div :ref="(ref: any) => dict.references.threejsElement = ref" class="threejsElement">
+    class="ThreeJsPage">
+    <div v-if="!isInMobile()">
+      Mobile Only
+    </div>
+    <div 
+      v-if="isInMobile()"
+      :ref="(ref: any) => dict.references.threejsElement = ref"
+      class="threejsElement"
+      @click="fullscreenToggleFunction">
       <JoystickController
         :ref="(ref: any) => dict.references.joystickElement = ref"
         class="joystickController"
         @on-degress-change="(degress: number) => {
           dict.functions.onDegreeChange(degress)
         }" />
+      <div
+        v-if="!fullScreend"
+        class="tryItScreen">
+        <button
+          @click="fullscreenToggleFunction">
+          Let Me Try It 😊
+        </button>
+      </div>
     </div>
   </div>
 </template>
@@ -272,5 +300,32 @@ onMounted(async () => {
 
   width: 100%;
   height: 100%;
+}
+
+.tryItScreen {
+  position: absolute;
+  z-index: 999;
+
+  height: 100%;
+  width: 100%;
+
+  background-color: white;
+
+  .Rows();
+
+  button {
+    // width: 90px;
+    // height: 30px;
+    .Rows();
+    align-items: center;
+
+    font-size: medium;
+
+    border-width: 0px;
+
+    padding: 8px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 </style>
