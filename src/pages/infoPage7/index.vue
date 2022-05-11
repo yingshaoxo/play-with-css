@@ -23,6 +23,9 @@ const dict = reactive({
     activeTab: tabMap.home,
   },
   functions: {
+    goback: () => {
+      window.history.back()
+    },
   },
 })
 
@@ -39,7 +42,11 @@ onMounted(async () => {
     }">
     <!-- <div class="yingshao_xo">Made by yingshaoxo</div> -->
     <div class="topBar">
-      <div class="leftArrow">
+      <div
+        class="leftArrow"
+        @click="()=>{
+          dict.functions.goback()
+        }">
         <arrow-left-outlined />
       </div>
       <div class="rightMenu">

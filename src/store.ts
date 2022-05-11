@@ -12,6 +12,7 @@ export const variables = reactive({
     joystick: '/joystick',
     threejs: '/threejs',
     infoPage: '/infoPage',
+    speed: '/speed',
   },
 })
 
