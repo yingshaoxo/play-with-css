@@ -4,13 +4,19 @@ module.exports = {
     defineEmits: 'readonly',
     defineProps: 'readonly',
   },
+  env: {
+    'jest/globals': true,
+  },
   extends: [
     'plugin:@typescript-eslint/recommended',
     'plugin:vue/vue3-recommended',
     'airbnb-base',
   ],
   parser: 'vue-eslint-parser',
-  plugins: ['@typescript-eslint'],
+  plugins: [
+    '@typescript-eslint',
+    'jest',
+  ],
   parserOptions: {
     parser: '@typescript-eslint/parser',
     ecmaVersion: 2020,

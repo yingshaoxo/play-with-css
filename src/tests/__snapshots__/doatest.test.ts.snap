@@ -1,0 +1,19 @@
+// Vitest Snapshot v1
+
+exports[`vitest test > test the rendering 1`] = `
+<div
+  data-v-app=""
+>
+  
+  <div
+    class="fatherBox1"
+    data-v-f2d77f4e=""
+  />
+  <div
+    data-v-f2d77f4e=""
+  >
+    hello
+  </div>
+  
+</div>
+`;
