@@ -13,6 +13,7 @@ export const variables = reactive({
     threejs: '/threejs',
     infoPage: '/infoPage',
     speed: '/speed',
+    typing: '/typing',
   },
 })
 

@@ -7,6 +7,7 @@ import Joystick5 from './pages/joystick5/index.vue'
 import ThreeJS6 from './pages/threejs6/index.vue'
 import InfoPage7 from './pages/infoPage7/index.vue'
 import speed8 from './pages/speed8/index.vue'
+import typing9 from './pages/typing/index.vue'
 
 import store from './store'
 
@@ -57,6 +58,11 @@ const routes: Array<RouteRecordRaw> = [
     path: store.variables.routesMap.speed,
     name: 'speed',
     component: speed8,
+  },
+  {
+    path: store.variables.routesMap.typing,
+    name: 'typing',
+    component: typing9,
   },
 ]
 
