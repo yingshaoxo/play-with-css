@@ -56,7 +56,7 @@ const dict = reactive({
         alert('I can\'t do it without any text!')
       }
 
-      dict.tempData.sentences = text.split('\n').filter((text:string) => text.trim() != '')
+      dict.tempData.sentences = text.split('\n').filter((text:string) => text.trim() != '') as never[]
 
       dict.tempData.sentenceIndex = -1
 
@@ -66,7 +66,7 @@ const dict = reactive({
   },
 })
 
-const keydownListener = (event) => {
+const keydownListener = (event: any) => {
   let key = String(event.key)
   if (key == ' ') { 
     key = '␣'
@@ -81,6 +81,10 @@ const keydownListener = (event) => {
 onMounted(async () => {
   document.addEventListener('keydown', keydownListener)
 })
+
+// onDeactivated(async () => {
+//   document.removeEventListener('keydown', keydownListener)
+// })
 </script>
 
 <template>
