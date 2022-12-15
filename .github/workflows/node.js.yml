@@ -10,20 +10,28 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-
-      - name: Set Node.js 16.x
-        uses: actions/setup-node@v3
+      - uses: mskelton/setup-yarn@v1
         with:
-          node-version: 16.x
+          cmd: install
 
-      - uses: borales/actions-yarn@v4
+      - uses: mskelton/setup-yarn@v1
         with:
-          cmd: install # will run `yarn install` command
+          cmd: build
 
-      - uses: borales/actions-yarn@4
-        with:
-          cmd: build:prod # will run `yarn build` command
+      # - uses: actions/checkout@v3
+
+      # - name: Set Node.js 16.x
+      #   uses: actions/setup-node@v3
+      #   with:
+      #     node-version: 16.x
+
+      # - uses: borales/actions-yarn@v4
+      #   with:
+      #     cmd: install # will run `yarn install` command
+
+      # - uses: borales/actions-yarn@4
+      #   with:
+      #     cmd: build # will run `yarn build` command
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
