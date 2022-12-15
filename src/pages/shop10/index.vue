@@ -119,4 +119,6 @@ onMounted(async () => {
 </template>
 
 <style lang="less" scoped>
+@import '../../tailwind.css';
+
 </style>
