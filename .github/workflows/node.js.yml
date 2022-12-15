@@ -13,13 +13,21 @@ jobs:
       matrix:
         node-version: [16.x]
     steps:
-      - uses: actions/checkout@v2
-      - uses: borales/actions-yarn@v2.3.0
+      - uses: actions/checkout@v3
+
+      - name: Set Node.js 16.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+
+      - uses: borales/actions-yarn@v4
         with:
           cmd: install # will run `yarn install` command
-      - uses: borales/actions-yarn@v2.3.0
+
+      - uses: borales/actions-yarn@4
         with:
           cmd: build # will run `yarn build` command
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
