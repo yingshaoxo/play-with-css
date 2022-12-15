@@ -7,11 +7,8 @@ on:
     branches: [ master ]
 
 jobs:
-  build-deploy:
+  build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [16.x]
     steps:
       - uses: actions/checkout@v3
 
@@ -26,7 +23,7 @@ jobs:
 
       - uses: borales/actions-yarn@4
         with:
-          cmd: build # will run `yarn build` command
+          cmd: build:prod # will run `yarn build` command
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
