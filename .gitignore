@@ -26,3 +26,4 @@ dist-ssr
 
 coverage
 __snapshots__
+.pytest_cache
