@@ -46,7 +46,7 @@ module.exports = {
     quotes: ['error', 'single'],
     'comma-dangle': ['error', 'always-multiline'],
     'object-curly-spacing': ['error', 'always'],
-    'max-len': ['error', 220],
+    // 'max-len': ['error', 220],
     'no-new': 'off',
     'linebreak-style': 'off',
     'import/extensions': 'off',
@@ -128,5 +128,6 @@ module.exports = {
     'vue/html-self-closing': 'off',
     'vue/html-closing-bracket-newline': 'off',
     'vue/no-parsing-error': [2, { 'x-invalid-end-tag': false }],
+    'max-len': 'off',
   },  
 }

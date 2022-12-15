@@ -327,7 +327,7 @@ module.exports = {
       },
     ],
     "color-no-invalid-hex":true,
-    "less/color-no-invalid-hex":true
+    "less/color-no-invalid-hex":true,
   },
   ignoreFiles: ['**/*.js', '**/*.ts'],
 };

@@ -1,13 +1,18 @@
 <script lang="ts" setup>
 import { reactive, withDefaults, computed, onMounted, watch, ref, onActivated, onDeactivated } from 'vue'
 
+import store from '../../store'
+
 import alipay_payment_qr_code_picture from '../../assets/shop10/my_alipay_income.png'
+
+import { useStorage } from '@vueuse/core'
 
 const dict = reactive({
   tempData: {
   },
   data: {
     is_en_broswer: false,
+    is_mobile_device: true,
   },
   functions: {
     is_en_broswer() {
@@ -48,6 +53,8 @@ const toggle_full_screen = () => {
   }
 }
 
+const language = useStorage('language', 'en')
+
 onMounted(async () => {
   dict.data.is_en_broswer = dict.functions.is_en_broswer()
 })
@@ -85,29 +92,31 @@ onMounted(async () => {
         w-1/2
         flex
         justify-center
+        2xl:justify-start
         items-center
       "
       >
         <div
           class="
+        2xl:ml-36
         text-white
         text-3xl
         "
         >
           <div
             @click="()=>{
-              dict.data.is_en_broswer = !dict.data.is_en_broswer
+              language = language == 'en'? 'cn': 'en'
             }"
           >
             {{
-              dict.data.is_en_broswer ?
+              language == 'en' ?
                 "Sell!" :
                 "售卖！"
             }}
           </div>
           <div class="mt-8">
             {{
-              dict.data.is_en_broswer ?
+              language == 'en' ?
                 "2$ per one." :
                 "方便面 3元 一个"
             }}

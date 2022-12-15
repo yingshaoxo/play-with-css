@@ -64,6 +64,7 @@ export const functions = reactive({
     openALink: (url: string) => {
       window.open(url)
     },
+    // eslint-disable-next-line no-promise-executor-return
     sleep: (t: number) => new Promise(s => setTimeout(s, t)),
   },
   pages: {
