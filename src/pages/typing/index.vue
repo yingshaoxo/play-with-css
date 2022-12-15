@@ -53,6 +53,7 @@ const dict = reactive({
       const text = dict.tempData.tempUserText
 
       if (text.length == 0) {
+        // eslint-disable-next-line no-alert
         alert('I can\'t do it without any text!')
       }
 

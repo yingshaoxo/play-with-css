@@ -25,12 +25,14 @@ module.exports = {
     },
   },
   rules: {
-    'vue/no-unused-vars': [
-      'error',
-      {
-        ignorePattern: '^_',
-      },
-    ],
+    // 'vue/no-unused-vars': [
+    //   'error',
+    //   {
+    //     ignorePattern: '^_',
+    //   },
+    // ],
+    'vue/no-unused-vars': 'off',
+    '@typescript-eslint/no-unused-vars': 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-bitwise': 'off',

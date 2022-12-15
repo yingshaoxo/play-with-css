@@ -50,13 +50,18 @@ const dict = reactive({
     justify-content: center;
     align-items: center;
 
-    border: 1px solid red;
+    border: 1px solid rgba(255,0,0, 0.2);
     margin-top: 30px;
 
     padding-top: 20px;
 
     button {
-      margin-bottom: 15px;
+      margin-bottom: 25px;
+      width: 150px;
+      height: 35px;
+      color: cornflowerblue;
+      background-color: rgba(0,0,0,0.05);
+      border: 0ch;
     }
   }
 }
