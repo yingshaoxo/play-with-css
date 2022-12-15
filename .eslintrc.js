@@ -114,16 +114,19 @@ module.exports = {
       },
     ],
     'vue/singleline-html-element-content-newline': 'off',
-    'vue/html-closing-bracket-newline': [
-      'error',
-      {
-        singleline: 'never',
-        multiline: 'never',
-      },
-    ],
+    // 'vue/html-closing-bracket-newline': [
+    //   'error',
+    //   {
+    //     singleline: 'never',
+    //     multiline: 'never',
+    //   },
+    // ],
     'vue/no-lone-template': 'off',
     'no-lonely-if': 'off',
     'no-else-return': 'off',
     'no-used-vars': 'off',
+    'vue/html-self-closing': 'off',
+    'vue/html-closing-bracket-newline': 'off',
+    'vue/no-parsing-error': [2, { 'x-invalid-end-tag': false }],
   },  
 }

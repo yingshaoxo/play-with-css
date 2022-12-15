@@ -14,6 +14,7 @@ export const variables = reactive({
     infoPage: '/infoPage',
     speed: '/speed',
     typing: '/typing',
+    shop: '/shop',
   },
 })
 

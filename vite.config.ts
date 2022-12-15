@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+
 import * as path from 'path'
 
 export default defineConfig({
@@ -10,8 +11,8 @@ export default defineConfig({
       '/@': path.resolve(__dirname, './src'),
     },
   },
-  test: {
-    globals: true,
-    environment: 'jsdom',
-  },
+  // test: {
+  //   globals: true,
+  //   environment: 'jsdom',
+  // },
 })
