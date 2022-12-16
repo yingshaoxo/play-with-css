@@ -531,7 +531,7 @@ onMounted(async () => {});
                 @apply text-4xl font-bold mr-3;
             }
             .title {
-                @apply flex flex-col justify-start content-center mt-2;
+                @apply flex flex-col justify-center content-center;
             }
         }
         .content {
