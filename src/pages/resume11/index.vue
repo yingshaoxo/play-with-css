@@ -26,12 +26,10 @@ onMounted(async () => {
 
 <template>
   <div class="w-screen h-screen">
-    <div class="
-      w-full h-full 
-      flex flex-col justify-center content-center	
-    ">
-      <div class="text-center">
+    <div class="container_">
+      <div class="title_">
         In Dev ...
+        <!-- YingJie Hu -->
       </div>
     </div>
   </div>
@@ -40,4 +38,12 @@ onMounted(async () => {
 <style lang="less" scoped>
 @import '../../tailwind.css';
 
+.container_ {
+  @apply w-full h-full flex flex-col justify-start content-center;
+}
+
+.title_ {
+  @apply text-center mt-10 text-sky-400 text-3xl;
+
+}
 </style>

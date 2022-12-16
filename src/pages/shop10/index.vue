@@ -118,7 +118,7 @@ onMounted(async () => {
             {{
               language == 'en' ?
                 "2$ per one." :
-                "方便面 3元 一个"
+                "面包(方便面) 3元 一个"
             }}
           </div>
         </div>
