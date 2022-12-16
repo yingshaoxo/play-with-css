@@ -1,3 +1,4 @@
+import { delay } from 'lodash'
 import { computed, reactive } from 'vue'
 
 import { router } from './router'
@@ -62,11 +63,17 @@ export const functions = reactive({
     log: (msg: any) => {
       console.log(msg)
     },
+    pop_up_a_message_window: (msg: string) => {
+      alert(msg)
+    },
     openALink: (url: string) => {
       window.open(url)
     },
     // eslint-disable-next-line no-promise-executor-return
     sleep: (t: number) => new Promise(s => setTimeout(s, t)),
+    copy_text_to_clipboard: async (text: string) => {
+      return navigator?.clipboard?.writeText(text);
+    }
   },
   pages: {
     switchPage: (page: string, query?: any) => {
