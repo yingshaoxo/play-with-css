@@ -9,6 +9,7 @@ import InfoPage7 from './pages/infoPage7/index.vue'
 import speed8 from './pages/speed8/index.vue'
 import typing9 from './pages/typing9/index.vue'
 import shop10 from './pages/shop10/index.vue'
+import resume11 from './pages/resume11/index.vue'
 
 import store from './store'
 
@@ -69,6 +70,11 @@ const routes: Array<RouteRecordRaw> = [
     path: store.variables.routesMap.shop,
     name: 'shop',
     component: shop10,
+  },
+  {
+    path: store.variables.routesMap.resume,
+    name: 'resume',
+    component: resume11,
   },
 ]
 

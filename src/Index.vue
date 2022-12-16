@@ -44,11 +44,14 @@ const dict = reactive({
 
   .rooms {
     min-width: 60%;
+    max-height: 70%;
+
+    overflow-y: scroll;
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    // justify-content: center;
 
     border: 1px solid rgba(255,0,0, 0.2);
     margin-top: 30px;
@@ -58,7 +61,7 @@ const dict = reactive({
     button {
       margin-bottom: 25px;
       width: 150px;
-      height: 35px;
+      min-height: 35px;
       color: cornflowerblue;
       background-color: rgba(0,0,0,0.05);
       border: 0ch;

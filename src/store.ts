@@ -15,6 +15,7 @@ export const variables = reactive({
     speed: '/speed',
     typing: '/typing',
     shop: '/shop',
+    resume: '/resume'
   },
 })
 
