@@ -30,7 +30,7 @@ onMounted(async () => {});
 </script>
 
 <template>
-    <div class="the_page w-screen h-screen">
+    <div class="the_page">
         <div class="container">
             <div class="header">
                 <div class="info">
@@ -479,6 +479,7 @@ onMounted(async () => {});
 @import "../../tailwind.css";
 
 .the_page {
+    @apply w-screen;
 }
 
 .container {
