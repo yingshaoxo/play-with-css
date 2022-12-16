@@ -123,7 +123,7 @@ onMounted(async () => {});
                                 <div class="line">
                                     For Protocols:
                                     <span class="less_obvious_text">
-                                        RESTful API, Websocks, GRPC
+                                        RESTful API, Websocks, GRPC, GraphQL
                                     </span>
                                 </div>
                                 <div class="line">
