@@ -8,6 +8,7 @@ import {
     ref,
     onActivated,
     onDeactivated,
+    onBeforeUnmount,
 } from "vue";
 
 import store from "../../store";
@@ -21,6 +22,7 @@ const dict = reactive({
     data: {
         is_en_broswer: false,
         is_mobile_device: true,
+        landscape_mode: false,
     },
     functions: {
         is_en_broswer() {
@@ -29,6 +31,9 @@ const dict = reactive({
                 return true;
             }
             return false;
+        },
+        check_if_it_is_in_landscape_mode: () => {
+            dict.data.landscape_mode = window.innerHeight < window.innerWidth;
         },
     },
 });
@@ -64,19 +69,38 @@ const toggle_full_screen = () => {
 };
 
 const language = useStorage("language", "en");
+const resize_handle_function = () => {
+    dict.functions.check_if_it_is_in_landscape_mode();
+};
 
 onMounted(async () => {
     dict.data.is_en_broswer = dict.functions.is_en_broswer();
+    dict.functions.check_if_it_is_in_landscape_mode();
+
+    window.addEventListener("resize", resize_handle_function);
 });
 
 // onDeactivated(async () => {
 //   document.removeEventListener('keydown', keydownListener)
 // })
+
+onBeforeUnmount(async () => {
+    window.removeEventListener("resize", resize_handle_function);
+});
 </script>
 
 <template>
     <div class="w-screen h-screen">
-        <div class="w-full h-full flex bg-indigo-500">
+        <div
+            v-if="!dict.data.landscape_mode"
+            class="w-full h-full flex flex-col justify-center content-center text-center text-xl"
+        >
+            Please rotate your screen to see it.
+        </div>
+        <div
+            v-if="dict.data.landscape_mode"
+            class="w-full h-full flex bg-indigo-500"
+        >
             <div class="w-1/2 flex justify-end items-center">
                 <img
                     class="h-full max-h-[480px]"
