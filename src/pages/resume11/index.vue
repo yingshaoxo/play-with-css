@@ -135,7 +135,8 @@ onMounted(async () => {});
                                 <div class="line">
                                     For Golang:
                                     <span class="less_obvious_text">
-                                        Gin, GORM, telegram-bot-api, gox
+                                        Gin, GORM, gox, go.rice,
+                                        telegram-bot-api
                                     </span>
                                 </div>
                                 <div class="line">
@@ -370,7 +371,8 @@ onMounted(async () => {});
                         <div class="small_part">
                             <div class="first_line">
                                 <div class="a">Beijing Jiaotong University</div>
-                                <div class="b">Jun 2021 - Sep 2023</div>
+                                <div class="b">Sep 2021 - Jan 2024</div>
+                                <!-- 2021.09.01--2024.01.01 -->
                             </div>
                             <div class="second_line">
                                 <div class="a less_obvious_text">
@@ -378,14 +380,14 @@ onMounted(async () => {});
                                 </div>
                                 <div class="b"></div>
                             </div>
-                            <div class="more_lines">
+                            <!-- <div class="more_lines">
                                 <div class="line">
                                     1. College English Levels 4 and 6.
                                 </div>
                                 <div class="line">
                                     2. A lot of prizes for robot matches.
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
