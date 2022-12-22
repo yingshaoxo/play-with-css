@@ -424,8 +424,9 @@ onMounted(async () => {});
                             </div> -->
                             <div class="more_lines">
                                 <div class="line">
-                                    Github:
+                                    <span class="silver"> GitHub: </span>
                                     <a
+                                        class="small_size_link"
                                         href="https://github.com/yingshaoxo"
                                         target="_blank"
                                         >https://github.com/yingshaoxo</a
@@ -433,9 +434,9 @@ onMounted(async () => {});
                                 </div>
 
                                 <div class="line">
-                                    Youtuber:
+                                    <span class="red"> YouTube: </span>
                                     <a
-                                        class="red"
+                                        class="small_size_link"
                                         href="https://www.youtube.com/channel/UCbT9GDmkqf555ATReJor6ag"
                                         target="_blank"
                                         >https://www.youtube.com/channel/UCbT9GDmkqf555ATReJor6ag</a
@@ -443,9 +444,19 @@ onMounted(async () => {});
                                 </div>
 
                                 <div class="line">
-                                    Twitter:
+                                    <span class="orange"> Blog: </span>
                                     <a
-                                        class="blue"
+                                        class="small_size_link"
+                                        href="https://yingshaoxo.blogspot.com"
+                                        target="_blank"
+                                        >https://yingshaoxo.blogspot.com</a
+                                    >
+                                </div>
+
+                                <div class="line">
+                                    <span class="blue"> Twitter: </span>
+                                    <a
+                                        class="small_size_link"
                                         href="https://twitter.com/yingshaoxo"
                                         target="_blank"
                                         >https://twitter.com/yingshaoxo</a
@@ -453,9 +464,9 @@ onMounted(async () => {});
                                 </div>
 
                                 <div class="line">
-                                    LeetCode:
+                                    <span class="cyan_blue"> LeetCode: </span>
                                     <a
-                                        class="cyan_blue"
+                                        class="small_size_link"
                                         href="https://leetcode.com/yingshaoxo"
                                         target="_blank"
                                         >https://leetcode.com/yingshaoxo</a
@@ -463,8 +474,8 @@ onMounted(async () => {});
                                 </div>
 
                                 <div class="line">
-                                    Pornhub:
-                                    <a class="not_really_white" href="#"
+                                    <span class="pink"> PornHub: </span>
+                                    <a class="small_size_link" href="#"
                                         >https://pornhub.com</a
                                     >
                                 </div>
@@ -595,7 +606,24 @@ onMounted(async () => {});
 .orange {
     @apply text-[#F57F17];
 }
+.silver {
+    @apply text-[#808080];
+}
+
+.black {
+    @apply text-black;
+}
+
+.pink {
+    @apply text-[#F48FB1];
+}
+
 .less_obvious_text {
     @apply opacity-60;
+}
+
+.small_size_link {
+    @apply ml-3;
+    font-size: medium;
 }
 </style>
