@@ -135,8 +135,7 @@ onMounted(async () => {});
                                 <div class="line">
                                     For Golang:
                                     <span class="less_obvious_text">
-                                        Gin, GORM, gox, go.rice,
-                                        telegram-bot-api
+                                        Gin, GORM, gox, telegram-bot-api
                                     </span>
                                 </div>
                                 <div class="line">
