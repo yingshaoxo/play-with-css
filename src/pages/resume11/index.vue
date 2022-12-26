@@ -168,6 +168,15 @@ onMounted(async () => {});
                                         SCSS, LESS, Tailwind CSS
                                     </span>
                                 </div>
+                                <div class="line pink">
+                                    > DevOps and CI/CD is not a problem for me.
+                                </div>
+                                <div class="line green">
+                                    Representative Project:
+                                    <span class="less_obvious_text"
+                                        >https://github.com/weneedparty
+                                    </span>
+                                </div>
                             </div>
                         </div>
 
