@@ -196,7 +196,7 @@ onMounted(async () => {});
                                 </div>
                                 <div class="line">
                                     2. Use Flutter(getx) to make the home page
-                                    of a stock app. It includes the market
+                                    of a stock app. It includes the realtime market
                                     overview page and the detail page of a
                                     stock.
                                 </div>
