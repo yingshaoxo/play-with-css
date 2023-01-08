@@ -545,7 +545,7 @@ onMounted(async () => {});
 }
 
 .container {
-    @apply w-full h-full flex flex-col justify-start content-center p-14 max-sm:p-4;
+    @apply w-full h-full flex flex-col justify-start content-center p-14 max-sm:p-4 max-sm:pt-12 max-sm:pb-12;
 }
 
 .header {
