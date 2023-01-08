@@ -196,9 +196,9 @@ onMounted(async () => {});
                                 </div>
                                 <div class="line">
                                     2. Use Flutter(getx) to make the home page
-                                    of a stock app. It includes the realtime market
-                                    overview page and the detail page of a
-                                    stock.
+                                    of a stock app. It includes the realtime
+                                    market overview page and the detail page of
+                                    a stock.
                                 </div>
                                 <div class="line">
                                     3. Use vue3(vite) and typescript to make the
@@ -491,6 +491,47 @@ onMounted(async () => {});
                         </div>
                     </div>
                 </div>
+
+                <div class="big_part">
+                    <div class="title_line">
+                        <div class="leading_symbol">|</div>
+                        <div class="title">ADVERTISEMENT</div>
+                    </div>
+                    <div class="content">
+                        <div class="small_part">
+                            <div class="first_line">
+                                <div class="a">Looking For A Girlfriend</div>
+                                <div class="b"></div>
+                            </div>
+                            <!-- <div class="second_line">
+                                <div class="a less_obvious_text">
+                                    #Long term friends with benefits
+                                </div>
+                                <div class="b">#Slim</div>
+                            </div> -->
+                            <div class="second_line_justify_start">
+                                <div class="a less_obvious_text">
+                                    #Long-term friends with benefits
+                                </div>
+                                <div class="b less_obvious_text">#Slim</div>
+                                <div class="b less_obvious_text">
+                                    #Stands with democracy
+                                </div>
+                            </div>
+                            <div class="more_lines">
+                                <div class="line">
+                                    If you have interests in me,
+                                </div>
+                                <div class="line">
+                                    Or if you think someone may fit with me,
+                                </div>
+                                <div class="line">
+                                    please contact me by email with her image.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -504,7 +545,7 @@ onMounted(async () => {});
 }
 
 .container {
-    @apply w-full h-full flex flex-col justify-start content-center p-14;
+    @apply w-full h-full flex flex-col justify-start content-center p-14 max-sm:p-4;
 }
 
 .header {
@@ -572,8 +613,11 @@ onMounted(async () => {});
                 .second_line_justify_start {
                     .second_line();
                     @apply justify-start;
-                    & > div:nth-child(1) {
+                    & > div {
                         margin-right: 20px;
+                    }
+                    & > div:last-child {
+                        margin-right: 0px;
                     }
                 }
                 .more_lines {
@@ -631,7 +675,7 @@ onMounted(async () => {});
 }
 
 .small_size_link {
-    @apply ml-3;
-    font-size: medium;
+    @apply ml-3 text-base max-sm:text-[9px];
+    word-wrap: break-word;
 }
 </style>
