@@ -173,8 +173,22 @@ onMounted(async () => {});
                                 </div>
                                 <div class="line green">
                                     Representative Project:
-                                    <span class="less_obvious_text"
-                                        >https://github.com/weneedparty
+                                    <span class="less_obvious_text">
+                                        <a
+                                            href="https://github.com/weneedparty"
+                                            target="_blank"
+                                            >https://github.com/weneedparty</a
+                                        >
+                                    </span>
+                                </div>
+                                <div class="line blue">
+                                    Representative App:
+                                    <span class="less_obvious_text">
+                                        <a
+                                            href="https://play.google.com/store/apps/details?id=xyz.yingshaoxo.freedom"
+                                            target="_blank"
+                                            >https://play.google.com/store/apps/details?id=xyz.yingshaoxo.freedom</a
+                                        >
                                     </span>
                                 </div>
                             </div>
