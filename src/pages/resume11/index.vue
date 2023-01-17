@@ -59,7 +59,9 @@ onMounted(async () => {});
                             >
                         </div>
                         <div>24丨 Male丨 170丨 Single</div>
-                        <div>Free丨 ShenZhen丨 Software Engineer丨 16k-20k</div>
+                        <div>
+                            Job Seeking丨 ShenZhen丨 Software Engineer丨 16k-20k
+                        </div>
                     </div>
                 </div>
                 <div class="head_image">
