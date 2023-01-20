@@ -542,7 +542,17 @@ onMounted(async () => {});
                                     Or if you think someone may fit with me,
                                 </div>
                                 <div class="line">
-                                    please contact me by email with her image.
+                                    Please contact me by email with her image.
+                                </div>
+                                <div class="line" style="margin-top: 25px">
+                                    My Online Resume:
+                                    <a
+                                        class="green"
+                                        target="_blank"
+                                        href="https://yingshaoxo.xyz/play-with-css/#/resume"
+                                    >
+                                        https://yingshaoxo.xyz/play-with-css/#/resume
+                                    </a>
                                 </div>
                             </div>
                         </div>
