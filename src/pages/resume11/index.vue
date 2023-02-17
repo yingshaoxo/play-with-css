@@ -370,6 +370,31 @@ onMounted(async () => {});
 
                         <div class="small_part">
                             <div class="first_line">
+                                <div class="a">Fake High School</div>
+                                <div class="b">Jun 2017 - Forever</div>
+                            </div>
+                            <div class="second_line">
+                                <div class="a less_obvious_text">
+                                    I indeed had a college life before, but it
+                                    seems like from the class I didn't learn
+                                    anything useful. And others in the China
+                                    Mainland also think that kind of education
+                                    is useless, so I would like to claim that
+                                    I'm just a high school student.
+                                </div>
+                                <div class="b"></div>
+                            </div>
+                            <div class="more_lines">
+                                <div class="line">
+                                    By the way, I secretly think bachelor's
+                                    education is also valueless compared to
+                                    self-learning.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- <div class="small_part">
+                            <div class="first_line">
                                 <div class="a">
                                     Nanjing Institute Of Railway Technology
                                 </div>
@@ -396,7 +421,6 @@ onMounted(async () => {});
                             <div class="first_line">
                                 <div class="a">Beijing Jiaotong University</div>
                                 <div class="b">Sep 2021 - Jan 2024</div>
-                                <!-- 2021.09.01--2024.01.01 -->
                             </div>
                             <div class="second_line">
                                 <div class="a less_obvious_text">
@@ -404,15 +428,7 @@ onMounted(async () => {});
                                 </div>
                                 <div class="b"></div>
                             </div>
-                            <!-- <div class="more_lines">
-                                <div class="line">
-                                    1. College English Levels 4 and 6.
-                                </div>
-                                <div class="line">
-                                    2. A lot of prizes for robot matches.
-                                </div>
-                            </div> -->
-                        </div>
+                        </div> -->
                     </div>
                 </div>
 
