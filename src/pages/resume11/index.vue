@@ -198,7 +198,12 @@ onMounted(async () => {});
 
                         <div class="small_part">
                             <div class="first_line">
-                                <div class="a">Fargo Wealth Group</div>
+                                <div class="a">
+                                    Fargo Wealth Group
+                                    <span class="less_obvious_text smaller_text"
+                                        >(Financial)</span
+                                    >
+                                </div>
                                 <div class="b">2021 - 2022</div>
                             </div>
                             <div class="second_line">
@@ -237,7 +242,12 @@ onMounted(async () => {});
 
                         <div class="small_part">
                             <div class="first_line">
-                                <div class="a">FinPoints</div>
+                                <div class="a">
+                                    FinPoints
+                                    <span class="less_obvious_text smaller_text"
+                                        >(Financial)</span
+                                    >
+                                </div>
                                 <div class="b">2022 - 2023</div>
                             </div>
                             <div class="second_line">
@@ -719,5 +729,8 @@ onMounted(async () => {});
 .small_size_link {
     @apply ml-3 text-base max-sm:text-[9px];
     word-wrap: break-word;
+}
+.smaller_text {
+    font-size: 70%;
 }
 </style>
