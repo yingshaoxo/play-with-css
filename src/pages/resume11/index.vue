@@ -135,12 +135,6 @@ onMounted(async () => {});
                                     </span>
                                 </div>
                                 <div class="line">
-                                    For Golang:
-                                    <span class="less_obvious_text">
-                                        Gin, GORM, gox, telegram-bot-api
-                                    </span>
-                                </div>
-                                <div class="line">
                                     For C#:
                                     <span class="less_obvious_text">
                                         Unity
@@ -156,6 +150,12 @@ onMounted(async () => {});
                                     For Rust:
                                     <span class="less_obvious_text">
                                         tonic
+                                    </span>
+                                </div>
+                                <div class="line">
+                                    For Golang:
+                                    <span class="less_obvious_text">
+                                        Gin, GORM, gox, telegram-bot-api
                                     </span>
                                 </div>
                                 <div class="line">
