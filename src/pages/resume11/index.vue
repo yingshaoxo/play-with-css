@@ -51,14 +51,15 @@ onMounted(async () => {});
                                 "
                                 >yingshaoxo@gmail.com</span
                             >
-                            | (+86) 17508265307
+                            <!-- | (+86) 17508265307 -->
+                            | @yingshaoxo
                         </div>
                         <div class="website">
                             <a href="https://yingshaoxo.xyz" target="_blank"
                                 >https://yingshaoxo.xyz</a
                             >
                         </div>
-                        <div>24丨 Male丨 170丨 Single</div>
+                        <div>25丨 Male丨 170丨 Single</div>
                         <div>
                             Job Seeking丨 ShenZhen丨 Software Engineer丨 16k-20k
                         </div>
@@ -75,6 +76,49 @@ onMounted(async () => {});
                         <div class="title">PROFESSIONAL EXPERIENCE</div>
                     </div>
                     <div class="content">
+                        <div class="small_part">
+                            <div class="first_line">
+                                <div class="a">Products I made</div>
+                                <div class="b">2016 - now</div>
+                            </div>
+                            <div class="second_line">
+                                <div class="a">As an individual developer</div>
+                                <div class="b"></div>
+                            </div>
+                            <div class="more_lines">
+                                <div class="line">
+                                    Website, <span class="green">It has alternatives</span>:
+                                    <span class="less_obvious_text">
+                                        <a
+                                            href="https://alternatives.ai-tools-online.xyz"
+                                            target="_blank"
+                                            >https://alternatives.ai-tools-online.xyz</a
+                                        >
+                                    </span>
+                                </div>
+                                <div class="line">
+                                    Android App, <span class="blue">Freedom</span>:
+                                    <span class="less_obvious_text">
+                                        <a
+                                            href="https://play.google.com/store/apps/details?id=xyz.yingshaoxo.freedom"
+                                            target="_blank"
+                                            >https://play.google.com/store/apps/details?id=xyz.yingshaoxo.freedom</a
+                                        >
+                                    </span>
+                                </div>
+                                <div class="line">
+                                    Android App, <span class="pink">WeLoveParty</span>:
+                                    <span class="less_obvious_text">
+                                        <a
+                                            href="https://play.google.com/store/apps/details?id=xyz.yingshaoxo.weloveparty&hl=en_US&gl=US"
+                                            target="_blank"
+                                            >https://play.google.com/store/apps/details?id=xyz.yingshaoxo.weloveparty</a
+                                        >
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="small_part">
                             <div class="first_line">
                                 <div class="a">Open Source Contributor</div>
@@ -112,26 +156,29 @@ onMounted(async () => {});
                                 <div class="line">
                                     For Javascript/TS:
                                     <span class="less_obvious_text">
-                                        React.js, Vue3, AntDesign, Element Plus,
+                                        Vue3, React.js, AntDesign, Element Plus,
                                         Electron, Express, mongoose
                                     </span>
                                 </div>
                                 <div class="line">
                                     For Database:
                                     <span class="less_obvious_text">
-                                        Sqlite, MySQL, MongoDB
+                                        MongoDB, MySQL, Sqlite
                                     </span>
                                 </div>
                                 <div class="line">
                                     For Protocols:
                                     <span class="less_obvious_text">
-                                        RESTful API, Websocks, GRPC, GraphQL
+                                        <a
+                                            href="https://github.com/yingshaoxo/auto_everything#for-simplifying-general-server-and-client-development"
+                                            target="_blank"
+                                        >YRPC</a>, GRPC, RESTful API, Websocks, GraphQL
                                     </span>
                                 </div>
                                 <div class="line">
                                     For Flutter/Dart:
                                     <span class="less_obvious_text">
-                                        Getx, hive, sqflite, auto_size_text
+                                        Getx, sqflite, auto_size_text, hive
                                     </span>
                                 </div>
                                 <div class="line">
@@ -173,7 +220,7 @@ onMounted(async () => {});
                                 <div class="line pink">
                                     > DevOps and CI/CD is not a problem for me.
                                 </div>
-                                <div class="line green">
+                                <!-- <div class="line green">
                                     Representative Project:
                                     <span class="less_obvious_text">
                                         <a
@@ -182,8 +229,8 @@ onMounted(async () => {});
                                             >https://github.com/weneedparty</a
                                         >
                                     </span>
-                                </div>
-                                <div class="line blue">
+                                </div> -->
+                                <!-- <div class="line blue">
                                     Representative App:
                                     <span class="less_obvious_text">
                                         <a
@@ -192,7 +239,7 @@ onMounted(async () => {});
                                             >https://play.google.com/store/apps/details?id=xyz.yingshaoxo.freedom</a
                                         >
                                     </span>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
 
