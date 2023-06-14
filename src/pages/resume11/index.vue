@@ -60,7 +60,7 @@ onMounted(async () => {
                     <p class="text-sm text-gray-500">------------------</p>
 
                     <p class="text-sm text-gray-500">如果 习近平、共产党、国内主席等 都是幌子，都是 不存在的东西，</p>
-                    <p class="text-sm text-gray-500">那谁是皇上？？？</p>
+                    <p class="text-sm text-gray-500">那谁是皇上？</p>
 
                     <p class="text-sm text-gray-500">------------------</p>
 
@@ -167,12 +167,32 @@ onMounted(async () => {
                                     </span>
                                 </div>
                                 <div class="line">
+                                    Android App, <span class="cyan_blue">Atlantis Space</span>:
+                                    <span class="less_obvious_text">
+                                        <a
+                                            href="https://play.google.com/store/apps/details?id=xyz.yingshaoxo.atlantisspace"
+                                            target="_blank"
+                                            >https://play.google.com/store/apps/details?id=xyz.yingshaoxo.atlantisspace</a
+                                        >
+                                    </span>
+                                </div>
+                                <div class="line">
                                     Android App, <span class="pink">WeLoveParty</span>:
                                     <span class="less_obvious_text">
                                         <a
                                             href="https://play.google.com/store/apps/details?id=xyz.yingshaoxo.weloveparty&hl=en_US&gl=US"
                                             target="_blank"
                                             >https://play.google.com/store/apps/details?id=xyz.yingshaoxo.weloveparty</a
+                                        >
+                                    </span>
+                                </div>
+                                <div class="line">
+                                    Android App, <span class="silver">Subtitle Killer</span>:
+                                    <span class="less_obvious_text">
+                                        <a
+                                            href="https://play.google.com/store/apps/details?id=xyz.yingshaoxo.android.subtitlekiller"
+                                            target="_blank"
+                                            >https://play.google.com/store/apps/details?id=xyz.yingshaoxo.android.subtitlekiller</a
                                         >
                                     </span>
                                 </div>
