@@ -170,9 +170,9 @@ onMounted(async () => {
                                     Android App, <span class="cyan_blue">Atlantis Space</span>:
                                     <span class="less_obvious_text">
                                         <a
-                                            href="https://play.google.com/store/apps/details?id=xyz.yingshaoxo.atlantisspace"
+                                            href="https://play.google.com/store/apps/details?id=xyz.yingshaoxo.atlantis_space"
                                             target="_blank"
-                                            >https://play.google.com/store/apps/details?id=xyz.yingshaoxo.atlantisspace</a
+                                            >https://play.google.com/store/apps/details?id=xyz.yingshaoxo.atlantis_space</a
                                         >
                                     </span>
                                 </div>
