@@ -54,6 +54,16 @@ onMounted(async () => {
                 <div class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
                   <h3 class="text-base font-semibold leading-6 text-gray-900" id="modal-title">Yingshaoxo's Thinking</h3>
                   <div class="mt-6">
+                    <p class="text-sm text-gray-500">中国竟然是世界上最危险的地方，</p>
+                    <p class="text-sm text-gray-500">你只能买到菜刀防身，而警察可以用冲锋枪。</p>
+                    <p class="text-sm text-gray-500">美国竟然是世界上最安全的国家，</p>
+                    <p class="text-sm text-gray-500">因为你有自卫能力，警察有枪，你也有。</p>
+                    <p class="text-sm text-gray-500">(人是否分为好人与坏人？警察是不是人？所以警察也可能是坏人。领导是不是人？所以最高领导人也可能是坏人。)</p>
+                    <p class="text-sm text-gray-500">#idea #突然的发现 #yingshaoxo</p>
+
+                    <p class="text-sm text-gray-500">------------------</p>
+                    <p class="text-sm text-gray-500">------------------</p>
+
                     <p class="text-sm text-gray-500">Soft language violence, thinking pollution is bad for people.</p>
                     <p class="text-sm text-gray-500">Anyone who uses it on other people for their own good is bad guy.</p>
 
