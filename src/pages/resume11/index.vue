@@ -54,6 +54,14 @@ onMounted(async () => {
                 <div class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
                   <h3 class="text-base font-semibold leading-6 text-gray-900" id="modal-title">Yingshaoxo's Thinking</h3>
                   <div class="mt-6">
+                    <p class="text-sm text-gray-500">最精妙的谋杀是什么？</p>
+                    <p class="text-sm text-gray-500">利用脑机接口，隔空传音，骚扰别人，直到别人主动去跳楼。</p>
+                    <p class="text-sm text-gray-500">这种谋杀从各种方面看都是自杀，人们唯一没看到的，是这个人为什么自杀。</p>
+                    <p class="text-sm text-gray-500">原因很简单，突如其来的大量骚扰，让对方不堪其扰，在心理防线崩溃的情况下，由于没有对脑机接口的反制手段，不得已选择自杀来自我防卫，捍卫自己的独立自主性。</p>
+
+                    <p class="text-sm text-gray-500">------------------</p>
+                    <p class="text-sm text-gray-500">------------------</p>
+
                     <p class="text-sm text-gray-500">中国竟然是世界上最危险的地方，</p>
                     <p class="text-sm text-gray-500">你只能买到菜刀防身，而警察可以用冲锋枪。</p>
                     <p class="text-sm text-gray-500">美国竟然是世界上最安全的国家，</p>
