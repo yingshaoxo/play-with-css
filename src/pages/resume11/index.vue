@@ -10,6 +10,8 @@ import {
     onDeactivated,
 } from "vue";
 
+import ignore_chinese from "../../assets/ignore_chinese.mp3";
+
 import store from "../../store";
 
 import { useStorage } from "@vueuse/core";
@@ -18,16 +20,22 @@ const dict = reactive({
     tempData: {
       open_popups: true,
     },
-    data: {},
+    data: {
+      audio: new Audio(ignore_chinese),
+    },
     functions: {},
 });
 
 const language = useStorage("language", "en");
 
+
 onMounted(async () => {
   window.onbeforeprint = (event) => {
     dict.tempData.open_popups = false
   };
+
+  dict.data.audio.loop = true;
+  dict.data.audio.volume = 1.0;
 });
 
 // onDeactivated(async () => {
@@ -54,6 +62,8 @@ onMounted(async () => {
                 <div class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
                   <h3 class="text-base font-semibold leading-6 text-gray-900" id="modal-title">Yingshaoxo's Thinking</h3>
                   <div class="mt-6">
+                    <button class="the_play_button" @click="dict.data.audio.play();">Play My Sound</button>
+
                     <p class="text-sm text-gray-500">最精妙的谋杀是什么？</p>
                     <p class="text-sm text-gray-500">利用脑机接口，隔空传音，骚扰别人，直到别人主动去跳楼。</p>
                     <p class="text-sm text-gray-500">这种谋杀从各种方面看都是自杀，人们唯一没看到的，是这个人为什么自杀。</p>
@@ -877,5 +887,16 @@ onMounted(async () => {
 }
 .smaller_text {
     font-size: 70%;
+}
+
+.the_play_button {
+    @apply text-blue-500;
+    @apply bg-gradient-to-r from-blue-100 to-blue-50;
+    @apply rounded-full;
+    @apply p-2;
+    @apply max-sm:p-1 max-sm:m-1;
+    @apply max-sm:rounded-sm;
+    width: 150px;
+    margin-bottom: 20px;
 }
 </style>
