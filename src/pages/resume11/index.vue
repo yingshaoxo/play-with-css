@@ -69,8 +69,10 @@ onMounted(async () => {
                     <p class="text-sm text-gray-500">这种谋杀从各种方面看都是自杀，人们唯一没看到的，是这个人为什么自杀。</p>
                     <p class="text-sm text-gray-500">原因很简单，突如其来的大量骚扰，让对方不堪其扰，在心理防线崩溃的情况下，由于没有对脑机接口的反制手段，不得已选择自杀来自我防卫，捍卫自己的独立自主性。</p>
 
+                    <br>
                     <p class="text-sm text-gray-500">------------------</p>
                     <p class="text-sm text-gray-500">------------------</p>
+                    <br>
 
                     <p class="text-sm text-gray-500">中国竟然是世界上最危险的地方，</p>
                     <p class="text-sm text-gray-500">你只能买到菜刀防身，而警察可以用冲锋枪。</p>
@@ -79,24 +81,32 @@ onMounted(async () => {
                     <p class="text-sm text-gray-500">(人是否分为好人与坏人？警察是不是人？所以警察也可能是坏人。领导是不是人？所以最高领导人也可能是坏人。)</p>
                     <p class="text-sm text-gray-500">#idea #突然的发现 #yingshaoxo</p>
 
+                    <br>
                     <p class="text-sm text-gray-500">------------------</p>
                     <p class="text-sm text-gray-500">------------------</p>
+                    <br>
 
                     <p class="text-sm text-gray-500">Soft language violence, thinking pollution is bad for people.</p>
                     <p class="text-sm text-gray-500">Anyone who uses it on other people for their own good is bad guy.</p>
 
+                    <br>
                     <p class="text-sm text-gray-500">------------------</p>
+                    <br>
 
                     <p class="text-sm text-gray-500">如果 习近平、共产党、国内主席等 都是幌子，都是 不存在的东西，</p>
                     <p class="text-sm text-gray-500">那谁是皇上？</p>
 
+                    <br>
                     <p class="text-sm text-gray-500">------------------</p>
+                    <br>
 
                     <p class="text-sm text-gray-500">不存在的原因：</p>
                     <p class="text-sm text-gray-500">1. 数据库里 查无此人 </p>
                     <p class="text-sm text-gray-500">2. 你没法 亲自见到 (视频可能都是 AI自动生成的)</p>
 
+                    <br>
                     <p class="text-sm text-gray-500">------------------</p>
+                    <br>
 
                     <p class="text-sm text-gray-500">从各种迹象来看</p>
                     <p class="text-sm text-gray-500">一直对你进行脑机监控的人，从技术上来讲都是傻屌，她们不知道未来会发生什么</p>
@@ -174,6 +184,16 @@ onMounted(async () => {
                                 <div class="b"></div>
                             </div>
                             <div class="more_lines">
+                                <div class="line">
+                                    Website, <span class="red">Style Shop</span>:
+                                    <span class="less_obvious_text">
+                                        <a
+                                            href="https://style_shop.ai-tools-online.xyz"
+                                            target="_blank"
+                                            >https://style_shop.ai-tools-online.xyz</a
+                                        >
+                                    </span>
+                                </div>
                                 <div class="line">
                                     Website, <span class="green">It has alternatives</span>:
                                     <span class="less_obvious_text">
