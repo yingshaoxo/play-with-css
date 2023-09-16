@@ -11,6 +11,7 @@ import {
 } from "vue";
 
 import ignore_chinese from "../../assets/ignore_chinese.mp3";
+import my_head from "../../assets/head.jpg";
 
 import store from "../../store";
 
@@ -164,7 +165,7 @@ onMounted(async () => {
                     </div>
                 </div>
                 <div class="head_image">
-                    <img src="https://yingshaoxo.xyz/yingshaoxo_files/me.jpg" />
+                    <img :src="my_head" />
                 </div>
             </div>
             <div class="body">
