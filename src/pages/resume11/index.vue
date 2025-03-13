@@ -19,7 +19,7 @@ import { useStorage } from "@vueuse/core";
 
 const dict = reactive({
     tempData: {
-      open_popups: true,
+      open_popups: false,
     },
     data: {
       audio: new Audio(ignore_chinese),
