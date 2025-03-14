@@ -4,20 +4,20 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build",
+    "build": "vue-tsc --noEmit --skipLibCheck && vite build",
     "preview": "vite preview",
     "hardDev": "nodemon -e vue,ts --watch ./src --exec \"vite\"",
     "test": "vitest --coverage"
   },
   "dependencies": {
-    "@ant-design/icons-vue": "^6.1.0",
-    "@types/three": "^0.139.0",
-    "@vueuse/core": "^9.6.0",
-    "dayjs": "^1.11.7",
-    "less": "^4.1.3",
-    "sass": "^1.56.2",
-    "three": "^0.140.0",
-    "vue": "^3.2.25",
+    "@ant-design/icons-vue": "6.1.0",
+    "@types/three": "0.139.0",
+    "@vueuse/core": "9.6.0",
+    "dayjs": "1.11.7",
+    "less": "4.1.3",
+    "sass": "1.56.2",
+    "three": "0.140.0",
+    "vue": "3.2.25",
     "vue-router": "4"
   },
   "devDependencies": {
