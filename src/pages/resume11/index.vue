@@ -160,7 +160,7 @@ onMounted(async () => {
                         </div>
                         <div>25丨 Male丨 170丨 Single</div>
                         <div>
-                            Job Seeking丨 ShenZhen丨 Software Engineer丨 16k-20k
+                            Job Seeking丨 ShenZhen or SiChuan丨 Software Engineer丨 <span class="email">3k-8k RMB</span>
                         </div>
                     </div>
                 </div>
